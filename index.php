@@ -1,68 +1,25 @@
 <?php 
-
-class movie 
-{
-
-public $id;
-public $title;
-public $original_title;
-public $nationality;
-public $date;
-public $vote;
-public $image;
-public $genero;
-
-public function __construct($id, $title, $original_title, 
-$nationality, $date, $vote, $image, $genero)
-
-{
-    $this->id = $id;
-    $this->title = $title;
-    $this->original_title = $original_title;
-    $this->nationality = $nationality;
-    $this->date = $date;
-    $this->vote = $vote;
-    $this->image = $image;
-    $this->genero = $genero;
-
-}
-
-}
-
- $genrs1 = ["Action"];
- //creazione di oggeti "movie"
- $movie1 = new Movie(1, "avatar", "Avatar2", "USA", "2023", 9.3, "image1.jpg", $genrs1);
-
- $genrs2 = ["Crime"];
- $movie2 = new Movie(2, "The Godfather", "The Godfather", "USA", "1972", 9.2, "image2.jpg",$genrs2);
- 
-//stampa di oggeto $movie1
-echo "Movie 1:\n";
-echo "ID: " . $movie1->id;
-echo "Title: " . $movie1->title;
-echo "Original Title: " . $movie1->original_title;
-echo "Nationality: " . $movie1->nationality;
-echo "Date: " . $movie1->date;
-echo "Vote: " . $movie1->vote;
-echo "Image: " . $movie1->image;
-echo "Genrs: ";
-foreach ($movie1->genero as $genre) {
-    echo $genre;
-}
-
-//stampa di oggeto $movie2
-echo "Movie 2:\n";
-echo "ID: " . $movie2->id;
-echo "Title: " . $movie2->title;
-echo "Original Title: " . $movie2->original_title;
-echo "Nationality: " . $movie2->nationality;
-echo "Date: " . $movie2->date;
-echo "Vote: " . $movie2->vote;
-echo "Image: " . $movie2->image;
-echo "Genrs: ";
-foreach ($movie2->genero as $genre) {
-    echo $genre;
-}
+include __DIR__.'/Models/Movie.php';
+include './db/db.php';
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>List of movies</title>
+</head>
+<body>
+    <div class="container p-5">
+    <h1 class="text-center">Movies</h1>
+    <?php 
+    include './partials/movie_list.php';
+    
+    ?>
+    </div>
+</body>
+</html>
 
