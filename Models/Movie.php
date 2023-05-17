@@ -26,5 +26,9 @@ $nationality, $date, $vote, $image, $genero)
 
 }
 
+public function  getRating() {
+    return ceil($this->vote / 2);
+  }
+
 }
 ?>

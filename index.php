@@ -1,6 +1,6 @@
 <?php 
 include __DIR__.'/Models/Movie.php';
-include './db/db.php';
+include __DIR__.'/db/db.php';
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ include './db/db.php';
     <div class="container p-5">
     <h1 class="text-center">Movies</h1>
     <?php 
-    include './partials/movie_list.php';
+    include __DIR__.'/partials/movie_list.php';
     
     ?>
     </div>

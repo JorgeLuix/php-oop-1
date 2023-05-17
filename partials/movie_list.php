@@ -21,7 +21,7 @@
                         <p class="card-text">Original Title: <?php echo $movie->original_title; ?></p>
                         <p class="card-text">Nationality: <?php echo $movie->nationality; ?></p>
                         <p class="card-text">Date: <?php echo $movie->date; ?></p>
-                        <p class="card-text">Vote: <?php echo $movie->vote; ?></p>
+                        <p class="card-text">Vote: <?php echo $movie->getRating(); ?></p>
                         <p class="card-text">Genero: <?php echo implode(', ', $movie->genero); ?></p>
                     </div>
                 </div>
